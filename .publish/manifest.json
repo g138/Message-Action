@@ -1,0 +1,99 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.8/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.8",
+    "version": "1.0.0",
+    "id": "6318bac4-d598-478f-beb7-6053de9c0a46",
+    "packageName": "com.microsoft.teams.extension",
+    "developer": {
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://localhost:3000",
+        "privacyUrl": "https://localhost:3000/privacy",
+        "termsOfUseUrl": "https://localhost:3000/termsofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Task App V4",
+        "full": ""
+    },
+    "description": {
+        "short": "Short description for My App.",
+        "full": "Full description of My App."
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [
+        {
+            "botId": "1b8655fe-106f-4058-8a38-0b04f72d5d19",
+            "canUpdateConfiguration": true,
+            "commands": [
+                {
+                    "id": "searchQuery",
+                    "type": "query",
+                    "title": "Search",
+                    "description": "Use the search bar above to find existing tasks or + sign to add a task/search further",
+                    "initialRun": false,
+                    "fetchTask": false,
+                    "context": [
+                        "compose",
+                        "commandBox"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "searchQuery",
+                            "title": "Search Query",
+                            "description": "Search tasks you created here.",
+                            "inputType": "text"
+                        }
+                    ]
+                },
+                {
+                    "id": "AddTask",
+                    "type": "action",
+                    "title": "Add Task",
+                    "description": "",
+                    "initialRun": true,
+                    "fetchTask": true,
+                    "context": [
+                        "commandBox",
+                        "compose"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "param",
+                            "title": "param",
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "Action",
+                    "type": "action",
+                    "title": "Action",
+                    "description": "",
+                    "initialRun": true,
+                    "fetchTask": true,
+                    "context": [
+                        "message"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "param",
+                            "title": "param",
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "medxnote.com",
+        "localhost"
+    ]
+}
